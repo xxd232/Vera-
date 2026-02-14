@@ -16,6 +16,7 @@
                     <li><a href="#register" aria-label="Navigate to registration section">Register</a></li>
                     <li><a href="#models" aria-label="Navigate to models section">Models</a></li>
                     <li><a href="#works" aria-label="Navigate to works section">Works</a></li>
+                    <li><a href="#careers" aria-label="Navigate to careers section">Careers</a></li>
                     <li><a href="#contact" aria-label="Navigate to contact section">Contact</a></li>
                 </ul>
             </nav>
@@ -62,6 +63,26 @@
                         <span class="btn-icon" aria-hidden="true">💬</span>
                         Speak to an Advisor
                     </a>
+                    <a href="#careers" class="btn btn-success" aria-label="View career opportunities">
+                        <span class="btn-icon" aria-hidden="true">💼</span>
+                        Career Opportunities
+                    </a>
+                    <a href="#blog" class="btn btn-info" aria-label="Read our blog">
+                        <span class="btn-icon" aria-hidden="true">📚</span>
+                        Read Our Blog
+                    </a>
+                    <a href="#events" class="btn btn-warning" aria-label="View upcoming events">
+                        <span class="btn-icon" aria-hidden="true">🎭</span>
+                        Upcoming Events
+                    </a>
+                    <a href="#gallery" class="btn btn-info" aria-label="Browse photo gallery">
+                        <span class="btn-icon" aria-hidden="true">🖼️</span>
+                        Photo Gallery
+                    </a>
+                    <a href="#booking" class="btn btn-success" aria-label="Book a model">
+                        <span class="btn-icon" aria-hidden="true">📅</span>
+                        Book a Model
+                    </a>
                 </div>
             </div>
         </section>
@@ -70,13 +91,26 @@
             <div class="container">
                 <h3>Register as a Model</h3>
                 <p>Join our prestigious modeling agency and take your career to the next level.</p>
-                <form class="registration-form" name="model-registration" method="post" action="/register">
+                <form class="registration-form" name="model-registration" method="post" action="/register" enctype="multipart/form-data">
                     <label for="reg-name">Full Name</label>
                     <input type="text" id="reg-name" name="name" placeholder="e.g., John Doe" required>
                     <label for="reg-email">Email</label>
                     <input type="email" id="reg-email" name="email" placeholder="e.g., john.doe@example.com" required>
                     <label for="reg-phone">Phone Number</label>
                     <input type="tel" id="reg-phone" name="phone" placeholder="e.g., +1 555 123 4567" required>
+                    <label for="reg-age">Age</label>
+                    <input type="number" id="reg-age" name="age" placeholder="e.g., 25" min="16" max="99" required>
+                    <label for="reg-height">Height (cm)</label>
+                    <input type="number" id="reg-height" name="height" placeholder="e.g., 175" min="140" max="220" required>
+                    <label for="reg-experience">Experience Level</label>
+                    <select id="reg-experience" name="experience" required>
+                        <option value="" disabled selected>Select Experience Level</option>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="professional">Professional</option>
+                    </select>
+                    <label for="reg-portfolio">Upload Portfolio (Images)</label>
+                    <input type="file" id="reg-portfolio" name="portfolio" accept="image/*" multiple>
                     <button type="submit" class="btn btn-primary">Submit Application</button>
                 </form>
             </div>
@@ -86,6 +120,30 @@
             <div class="container">
                 <h3>Our Models</h3>
                 <p>Browse through our diverse portfolio of talented models.</p>
+                <form class="search-form" name="model-search" method="get" action="/search">
+                    <label for="search-query">Search Models</label>
+                    <div class="search-wrapper">
+                        <input type="text" id="search-query" name="query" placeholder="Search by name, category, or style...">
+                        <button type="submit" class="btn btn-primary btn-search">Search</button>
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-gender">Gender</label>
+                        <select id="filter-gender" name="gender">
+                            <option value="">All</option>
+                            <option value="female">Female</option>
+                            <option value="male">Male</option>
+                            <option value="non-binary">Non-Binary</option>
+                        </select>
+                        <label for="filter-category">Category</label>
+                        <select id="filter-category" name="category">
+                            <option value="">All Categories</option>
+                            <option value="fashion">Fashion</option>
+                            <option value="commercial">Commercial</option>
+                            <option value="runway">Runway</option>
+                            <option value="editorial">Editorial</option>
+                        </select>
+                    </div>
+                </form>
             </div>
         </section>
 
@@ -158,11 +216,216 @@
                 </form>
             </div>
         </section>
+
+        <section id="booking" class="content-section alt-bg">
+            <div class="container">
+                <h3>Book a Model</h3>
+                <p>Request a booking for your project or event.</p>
+                <form class="booking-form" name="model-booking" method="post" action="/booking/request">
+                    <label for="booking-name">Your Name/Company</label>
+                    <input type="text" id="booking-name" name="name" placeholder="e.g., Fashion Corp" required>
+                    <label for="booking-email">Email</label>
+                    <input type="email" id="booking-email" name="email" placeholder="e.g., contact@fashioncorp.com" required>
+                    <label for="booking-phone">Phone Number</label>
+                    <input type="tel" id="booking-phone" name="phone" placeholder="e.g., +1 555 234 5678" required>
+                    <label for="booking-date">Preferred Date</label>
+                    <input type="date" id="booking-date" name="date" required>
+                    <label for="booking-duration">Duration (hours)</label>
+                    <input type="number" id="booking-duration" name="duration" placeholder="e.g., 4" min="1" max="24" required>
+                    <label for="booking-type">Project Type</label>
+                    <select id="booking-type" name="type" required>
+                        <option value="" disabled selected>Select Project Type</option>
+                        <option value="photoshoot">Photo Shoot</option>
+                        <option value="runway">Runway Show</option>
+                        <option value="commercial">Commercial</option>
+                        <option value="editorial">Editorial</option>
+                        <option value="event">Event Appearance</option>
+                    </select>
+                    <label for="booking-budget">Budget Range</label>
+                    <select id="booking-budget" name="budget" required>
+                        <option value="" disabled selected>Select Budget Range</option>
+                        <option value="under1k">Under $1,000</option>
+                        <option value="1k-5k">$1,000 - $5,000</option>
+                        <option value="5k-10k">$5,000 - $10,000</option>
+                        <option value="over10k">Over $10,000</option>
+                    </select>
+                    <label for="booking-details">Project Details</label>
+                    <textarea id="booking-details" name="details" placeholder="Tell us about your project..." rows="4" required></textarea>
+                    <button type="submit" class="btn btn-success">Request Booking</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="careers" class="content-section">
+            <div class="container">
+                <h3>Career Opportunities</h3>
+                <p>Join our team and be part of the fashion industry's leading agency.</p>
+                <div class="careers-list">
+                    <div class="career-card">
+                        <h4>Talent Scout</h4>
+                        <p>Discover and recruit new modeling talent for our agency.</p>
+                        <a href="#apply" class="btn btn-success">Apply Now</a>
+                    </div>
+                    <div class="career-card">
+                        <h4>Booking Agent</h4>
+                        <p>Manage model bookings and client relationships.</p>
+                        <a href="#apply" class="btn btn-success">Apply Now</a>
+                    </div>
+                    <div class="career-card">
+                        <h4>Marketing Specialist</h4>
+                        <p>Promote our models and brand across various channels.</p>
+                        <a href="#apply" class="btn btn-success">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="content-section alt-bg">
+            <div class="container">
+                <h3>Our Blog</h3>
+                <p>Latest insights, tips, and news from the modeling industry.</p>
+                <div class="blog-grid">
+                    <article class="blog-post">
+                        <h4>Top 10 Modeling Tips for Beginners</h4>
+                        <p class="post-date">February 10, 2026</p>
+                        <p>Essential advice for aspiring models starting their journey...</p>
+                        <a href="#" class="btn btn-info btn-small">Read More</a>
+                    </article>
+                    <article class="blog-post">
+                        <h4>Fashion Week Highlights 2026</h4>
+                        <p class="post-date">February 5, 2026</p>
+                        <p>Our models shine at this year's most prestigious fashion events...</p>
+                        <a href="#" class="btn btn-info btn-small">Read More</a>
+                    </article>
+                    <article class="blog-post">
+                        <h4>Building Your Portfolio</h4>
+                        <p class="post-date">January 28, 2026</p>
+                        <p>Expert guidance on creating a standout modeling portfolio...</p>
+                        <a href="#" class="btn btn-info btn-small">Read More</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="events" class="content-section">
+            <div class="container">
+                <h3>Upcoming Events</h3>
+                <p>Join us at exclusive fashion shows, castings, and networking events.</p>
+                <div class="events-list">
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="month">MAR</span>
+                            <span class="day">15</span>
+                        </div>
+                        <div class="event-details">
+                            <h4>Spring Fashion Showcase</h4>
+                            <p>Annual runway show featuring our top models</p>
+                            <a href="#" class="btn btn-warning btn-small">Get Tickets</a>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="month">MAR</span>
+                            <span class="day">22</span>
+                        </div>
+                        <div class="event-details">
+                            <h4>Open Casting Call</h4>
+                            <p>Meet our agents and get discovered</p>
+                            <a href="#" class="btn btn-warning btn-small">RSVP</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="content-section alt-bg">
+            <div class="container">
+                <h3>Photo Gallery</h3>
+                <p>Explore our stunning collection of professional photography.</p>
+                <div class="gallery-grid">
+                    <div class="gallery-item">Portfolio Shot 1</div>
+                    <div class="gallery-item">Portfolio Shot 2</div>
+                    <div class="gallery-item">Portfolio Shot 3</div>
+                    <div class="gallery-item">Portfolio Shot 4</div>
+                    <div class="gallery-item">Portfolio Shot 5</div>
+                    <div class="gallery-item">Portfolio Shot 6</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="content-section">
+            <div class="container">
+                <h3>What People Say</h3>
+                <p>Hear from our successful models and satisfied clients.</p>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Vera Agency launched my international modeling career. Their professionalism is unmatched!"</p>
+                        <p class="testimonial-author">- Sarah M., Professional Model</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Working with Vera's models elevated our brand campaigns significantly."</p>
+                        <p class="testimonial-author">- James L., Creative Director</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"The best agency for discovering fresh, diverse talent in the industry."</p>
+                        <p class="testimonial-author">- Maria K., Fashion Editor</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="content-section alt-bg">
+            <div class="container">
+                <h3>Frequently Asked Questions</h3>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>How do I apply to become a model?</summary>
+                        <p>Fill out our registration form above with your details and portfolio. Our team reviews all applications within 5 business days.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>What are your agency fees?</summary>
+                        <p>We work on a commission basis. Models keep 80% of their earnings, and we take 20% to cover representation and booking services.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Do I need prior experience?</summary>
+                        <p>No! We work with models at all experience levels, from beginners to seasoned professionals.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>What are the height requirements?</summary>
+                        <p>Requirements vary by category. Fashion models typically need to be 5'8" or taller, but we have opportunities for all heights in commercial modeling.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Vera Modeling Agency. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Vera Modeling Agency</h4>
+                    <p>Connecting talent with opportunity since 2020</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#register">Register</a></li>
+                        <li><a href="#models">Models</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook" class="social-icon">📘</a>
+                        <a href="#" aria-label="Instagram" class="social-icon">📷</a>
+                        <a href="#" aria-label="Twitter" class="social-icon">🐦</a>
+                        <a href="#" aria-label="LinkedIn" class="social-icon">💼</a>
+                    </div>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2026 Vera Modeling Agency. All rights reserved.</p>
         </div>
     </footer>
 </body>
