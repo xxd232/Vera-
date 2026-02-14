@@ -188,6 +188,14 @@ form {
     margin: 0 auto;
 }
 
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #4a5568;
+    font-size: 0.9rem;
+}
+
 input[type="text"],
 input[type="email"],
 input[type="tel"],

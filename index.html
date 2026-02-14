@@ -71,9 +71,12 @@
                 <h3>Register as a Model</h3>
                 <p>Join our prestigious modeling agency and take your career to the next level.</p>
                 <form class="registration-form">
-                    <input type="text" placeholder="Full Name" required>
-                    <input type="email" placeholder="Email" required>
-                    <input type="tel" placeholder="Phone Number" required>
+                    <label for="reg-name">Full Name</label>
+                    <input type="text" id="reg-name" placeholder="Full Name" required>
+                    <label for="reg-email">Email</label>
+                    <input type="email" id="reg-email" placeholder="Email" required>
+                    <label for="reg-phone">Phone Number</label>
+                    <input type="tel" id="reg-phone" placeholder="Phone Number" required>
                     <button type="submit" class="btn btn-primary">Submit Application</button>
                 </form>
             </div>
@@ -98,9 +101,12 @@
                 <h3>Contact Us</h3>
                 <p>Get in touch with our team for inquiries and bookings.</p>
                 <form class="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <label for="contact-name">Your Name</label>
+                    <input type="text" id="contact-name" placeholder="Your Name" required>
+                    <label for="contact-email">Your Email</label>
+                    <input type="email" id="contact-email" placeholder="Your Email" required>
+                    <label for="contact-message">Your Message</label>
+                    <textarea id="contact-message" placeholder="Your Message" rows="5" required></textarea>
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
             </div>
@@ -111,7 +117,8 @@
                 <h3>Subscribe to Feeds</h3>
                 <p>Stay updated with our latest RSS feeds.</p>
                 <form class="subscribe-form">
-                    <input type="email" placeholder="Enter your email" required>
+                    <label for="feeds-email">Enter your email</label>
+                    <input type="email" id="feeds-email" placeholder="Enter your email" required>
                     <button type="submit" class="btn btn-accent">Subscribe to RSS</button>
                 </form>
             </div>
@@ -122,7 +129,8 @@
                 <h3>Newsletter</h3>
                 <p>Receive our monthly newsletter with industry insights and updates.</p>
                 <form class="subscribe-form">
-                    <input type="email" placeholder="Enter your email" required>
+                    <label for="newsletter-email">Enter your email</label>
+                    <input type="email" id="newsletter-email" placeholder="Enter your email" required>
                     <button type="submit" class="btn btn-accent">Subscribe to Newsletter</button>
                 </form>
             </div>
@@ -133,10 +141,14 @@
                 <h3>Speak to an Advisor</h3>
                 <p>Schedule a consultation with one of our expert advisors.</p>
                 <form class="advisor-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <input type="tel" placeholder="Phone Number" required>
-                    <select required>
+                    <label for="advisor-name">Your Name</label>
+                    <input type="text" id="advisor-name" placeholder="Your Name" required>
+                    <label for="advisor-email">Your Email</label>
+                    <input type="email" id="advisor-email" placeholder="Your Email" required>
+                    <label for="advisor-phone">Phone Number</label>
+                    <input type="tel" id="advisor-phone" placeholder="Phone Number" required>
+                    <label for="advisor-time">Select Preferred Time</label>
+                    <select id="advisor-time" required>
                         <option value="">Select Preferred Time</option>
                         <option value="morning">Morning (9AM - 12PM)</option>
                         <option value="afternoon">Afternoon (12PM - 5PM)</option>
