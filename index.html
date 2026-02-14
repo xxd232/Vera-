@@ -13,10 +13,10 @@
             <h1 class="logo">Vera Modeling Agency</h1>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#models">Models</a></li>
-                    <li><a href="#works">Works</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#register" aria-label="Navigate to registration section">Home</a></li>
+                    <li><a href="#models" aria-label="Navigate to models section">Models</a></li>
+                    <li><a href="#works" aria-label="Navigate to works section">Works</a></li>
+                    <li><a href="#contact" aria-label="Navigate to contact section">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -34,32 +34,32 @@
             <div class="container">
                 <h3>Get Started</h3>
                 <div class="button-grid">
-                    <a href="#register" class="btn btn-primary">
-                        <span class="btn-icon">📝</span>
+                    <a href="#register" class="btn btn-primary" aria-label="Register as a model">
+                        <span class="btn-icon" aria-hidden="true">📝</span>
                         Register as a Model
                     </a>
-                    <a href="#models" class="btn btn-secondary">
-                        <span class="btn-icon">👥</span>
+                    <a href="#models" class="btn btn-secondary" aria-label="View our models portfolio">
+                        <span class="btn-icon" aria-hidden="true">👥</span>
                         Check Our Models
                     </a>
-                    <a href="#works" class="btn btn-secondary">
-                        <span class="btn-icon">📸</span>
+                    <a href="#works" class="btn btn-secondary" aria-label="View our works and campaigns">
+                        <span class="btn-icon" aria-hidden="true">📸</span>
                         Check Our Works
                     </a>
-                    <a href="#contact" class="btn btn-secondary">
-                        <span class="btn-icon">📧</span>
+                    <a href="#contact" class="btn btn-secondary" aria-label="Contact us">
+                        <span class="btn-icon" aria-hidden="true">📧</span>
                         Contact Us
                     </a>
-                    <a href="#subscribe-feeds" class="btn btn-accent">
-                        <span class="btn-icon">📡</span>
-                        Subscribe to Feeds
+                    <a href="#subscribe-feeds" class="btn btn-accent" aria-label="Subscribe to email notifications">
+                        <span class="btn-icon" aria-hidden="true">📡</span>
+                        Subscribe to Updates
                     </a>
-                    <a href="#newsletter" class="btn btn-accent">
-                        <span class="btn-icon">📰</span>
+                    <a href="#newsletter" class="btn btn-accent" aria-label="Subscribe to newsletter">
+                        <span class="btn-icon" aria-hidden="true">📰</span>
                         Subscribe to Newsletter
                     </a>
-                    <a href="#advisor" class="btn btn-highlight">
-                        <span class="btn-icon">💬</span>
+                    <a href="#advisor" class="btn btn-highlight" aria-label="Speak to an advisor">
+                        <span class="btn-icon" aria-hidden="true">💬</span>
                         Speak to an Advisor
                     </a>
                 </div>
@@ -70,13 +70,13 @@
             <div class="container">
                 <h3>Register as a Model</h3>
                 <p>Join our prestigious modeling agency and take your career to the next level.</p>
-                <form class="registration-form">
+                <form class="registration-form" name="model-registration" method="post" action="/register">
                     <label for="reg-name">Full Name</label>
-                    <input type="text" id="reg-name" placeholder="Full Name" required>
+                    <input type="text" id="reg-name" name="name" placeholder="e.g., John Doe" required>
                     <label for="reg-email">Email</label>
-                    <input type="email" id="reg-email" placeholder="Email" required>
+                    <input type="email" id="reg-email" name="email" placeholder="e.g., john.doe@example.com" required>
                     <label for="reg-phone">Phone Number</label>
-                    <input type="tel" id="reg-phone" placeholder="Phone Number" required>
+                    <input type="tel" id="reg-phone" name="phone" placeholder="e.g., +1 555 123 4567" required>
                     <button type="submit" class="btn btn-primary">Submit Application</button>
                 </form>
             </div>
@@ -100,13 +100,13 @@
             <div class="container">
                 <h3>Contact Us</h3>
                 <p>Get in touch with our team for inquiries and bookings.</p>
-                <form class="contact-form">
+                <form class="contact-form" name="contact" method="post" action="/contact">
                     <label for="contact-name">Your Name</label>
-                    <input type="text" id="contact-name" placeholder="Your Name" required>
+                    <input type="text" id="contact-name" name="name" placeholder="e.g., Jane Smith" required>
                     <label for="contact-email">Your Email</label>
-                    <input type="email" id="contact-email" placeholder="Your Email" required>
+                    <input type="email" id="contact-email" name="email" placeholder="e.g., jane.smith@example.com" required>
                     <label for="contact-message">Your Message</label>
-                    <textarea id="contact-message" placeholder="Your Message" rows="5" required></textarea>
+                    <textarea id="contact-message" name="message" placeholder="Tell us about your inquiry..." rows="5" required></textarea>
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
             </div>
@@ -114,12 +114,12 @@
 
         <section id="subscribe-feeds" class="content-section">
             <div class="container">
-                <h3>Subscribe to Feeds</h3>
-                <p>Stay updated with our latest RSS feeds.</p>
-                <form class="subscribe-form">
+                <h3>Subscribe to Updates</h3>
+                <p>Stay updated with our latest news and announcements via email.</p>
+                <form class="subscribe-form" name="feed-subscribe" method="post" action="/subscribe/updates">
                     <label for="feeds-email">Enter your email</label>
-                    <input type="email" id="feeds-email" placeholder="Enter your email" required>
-                    <button type="submit" class="btn btn-accent">Subscribe to RSS</button>
+                    <input type="email" id="feeds-email" name="email" placeholder="e.g., your.email@example.com" required>
+                    <button type="submit" class="btn btn-accent">Subscribe to Updates</button>
                 </form>
             </div>
         </section>
@@ -128,9 +128,9 @@
             <div class="container">
                 <h3>Newsletter</h3>
                 <p>Receive our monthly newsletter with industry insights and updates.</p>
-                <form class="subscribe-form">
+                <form class="subscribe-form" name="newsletter-subscribe" method="post" action="/subscribe/newsletter">
                     <label for="newsletter-email">Enter your email</label>
-                    <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+                    <input type="email" id="newsletter-email" name="email" placeholder="e.g., your.email@example.com" required>
                     <button type="submit" class="btn btn-accent">Subscribe to Newsletter</button>
                 </form>
             </div>
@@ -140,16 +140,16 @@
             <div class="container">
                 <h3>Speak to an Advisor</h3>
                 <p>Schedule a consultation with one of our expert advisors.</p>
-                <form class="advisor-form">
+                <form class="advisor-form" name="advisor-consultation" method="post" action="/advisor/schedule">
                     <label for="advisor-name">Your Name</label>
-                    <input type="text" id="advisor-name" placeholder="Your Name" required>
+                    <input type="text" id="advisor-name" name="name" placeholder="e.g., Alex Johnson" required>
                     <label for="advisor-email">Your Email</label>
-                    <input type="email" id="advisor-email" placeholder="Your Email" required>
+                    <input type="email" id="advisor-email" name="email" placeholder="e.g., alex.johnson@example.com" required>
                     <label for="advisor-phone">Phone Number</label>
-                    <input type="tel" id="advisor-phone" placeholder="Phone Number" required>
+                    <input type="tel" id="advisor-phone" name="phone" placeholder="e.g., +1 555 987 6543" required>
                     <label for="advisor-time">Select Preferred Time</label>
-                    <select id="advisor-time" required>
-                        <option value="">Select Preferred Time</option>
+                    <select id="advisor-time" name="time" required>
+                        <option value="" disabled selected>Select Preferred Time</option>
                         <option value="morning">Morning (9AM - 12PM)</option>
                         <option value="afternoon">Afternoon (12PM - 5PM)</option>
                         <option value="evening">Evening (5PM - 8PM)</option>
