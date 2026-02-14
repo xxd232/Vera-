@@ -98,6 +98,13 @@ const announcementsData = [
         type: "News",
         date: "January 10, 2026",
         content: "Vera Modeling Agency has been named 'Agency of the Year' by the Fashion Industry Association! Additionally, our model Marcus Chen received the 'Rising Star Award' for his outstanding work in 2025. Thank you to everyone who continues to make Vera a leader in the modeling industry."
+    },
+    {
+        id: 6,
+        title: "Winter Fashion Show - CANCELLED",
+        type: "Event",
+        date: "January 5, 2026",
+        content: "Due to unforeseen circumstances, the Winter Fashion Show originally scheduled for January 30th has been cancelled. We apologize for any inconvenience. All participants will be contacted directly. Stay tuned for updates on our next event."
     }
 ];
 
